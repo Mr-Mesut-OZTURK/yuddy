@@ -1,0 +1,22 @@
+.slick-slider:hover .slick-prev,
+.slick-slider:hover .slick-next {
+    display: block !important;
+}
+
+.slick-prev {
+    display: none !important;
+    margin-left: 25px;
+    z-index: 100;
+    background-color: #fff9;
+    height: 40px;
+    width: 40px;
+}
+
+.slick-next {
+    display: none !important;
+    margin-right: 25px;
+    z-index: 100;
+    background-color: #fff9;
+    height: 40px;
+    width: 40px;
+}
