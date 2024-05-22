@@ -173,7 +173,7 @@
     
         {
             "name": "Electronics",
-            "value": "Electronics",
+            "value": "electronics",
             "items": [
                 {
                     "name": "Mobiles",
@@ -224,8 +224,8 @@
         },
     
         {
-            "name": "Sport && Books",
-            "value": "sport-books",
+            "name": "Sport & Books",
+            "value": "sport-and-books",
             "items": [
                 {
                     "name": "Sports",

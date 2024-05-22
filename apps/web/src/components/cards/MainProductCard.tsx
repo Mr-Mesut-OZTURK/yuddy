@@ -4,7 +4,7 @@ import { Link, IconButton } from '@mui/material'
 import { YButton } from '@yuddy/shared-ui'
 import Image from 'next/image'
 import SearchIcon from '@mui/icons-material/Search';
-
+import WarningAmberRoundedIcon from '@mui/icons-material/WarningAmberRounded';
 import Button from '@mui/material/Button';
 import Avatar from '@mui/material/Avatar';
 import List from '@mui/material/List';
@@ -18,6 +18,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import AddIcon from '@mui/icons-material/Add';
 import Typography from '@mui/material/Typography';
 import { blue } from '@mui/material/colors';
+import { MainButton } from '../buttons'
 
 
 interface IComponentProps {
@@ -27,6 +28,8 @@ export const MainProductCard = ({ className }: IComponentProps) => {
 
     const [detailDialog, setDetailDialog] = useState(false)
     const [chartDialog, setChartDialog] = useState(false)
+
+    const [quantity, setQuantity] = useState(1)
 
 
     return (
@@ -98,15 +101,102 @@ export const MainProductCard = ({ className }: IComponentProps) => {
 
 
 
-            <Dialog onClose={() => setDetailDialog(false)} open={!!detailDialog}>
-                <div className='p-2 bg-white'>
+            <Dialog onClose={() => setDetailDialog(false)} open={!!detailDialog}
+                PaperProps={{
+
+                    sx: {
+                        width: '90%',
+                        maxWidth: "900px",
+                        bgcolor: 'red'
+                    }
+                }}
+            >
+                <div className='p-5 bg-white'>
                     <div className='grid grid-cols-1 sm:grid-cols-2 '>
-                        <div>
+                        <div className='hidden sm:block'>
                             Slider Section
                         </div>
 
                         <div>
-                            info section
+                            <h2 className='text-[24px] font-[500] mb-5'>
+                                CASUAL SHOES SNEAKER
+                            </h2>
+
+                            <p className='text-[#999] line-through mb-2'>
+                                $99.00
+                            </p>
+
+                            <p className='text-red-500'>
+                                $99.00
+                                <span className='text-white bg-red-500 p-1 ml-2'>
+                                    SAVE 12%
+                                </span>
+                            </p>
+
+                            <p className='mt-5 font-[300] text-[14px] mb-2'>
+                                Sed ut perspiciatis unde omnis iste natus error
+                                sit voluptatem accusantium doloremque laudantium,
+                                totam rem aperiam, eaque ipsa quae ab illo inventore
+                                veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                            </p>
+
+                            <ul className='font-[300] text-[14px] mb-5 list-disc list-inside ml-3'>
+                                <li className='list-item'>
+                                    Ut enim ad minima veniam, quis nostrum exercitationem.
+                                </li>
+
+                                <li>
+                                    Nnisi ut aliquid ex ea commodi consequatur.
+                                </li>
+
+                                <li>
+                                    Quis autem vel eum iure reprehenderit qui in ea voluptate
+                                </li>
+
+                                <li>
+                                    Velit esse quam nihil molestiae consequatur, vel illum.
+                                </li>
+
+                                <li>
+                                    Dolorem eum fugiat quo voluptas nulla pariatur.
+                                </li>
+                            </ul>
+
+                            <div className='flex items-end justify-between gap-2'>
+                                <div className='flex flex-col'>
+                                    <span>
+                                        Quantity :
+                                    </span>
+                                    <input
+                                        type="number"
+                                        name=""
+                                        min={0}
+                                        value={quantity}
+                                        onChange={(e) => {
+                                            // console.log({ e });
+                                            setQuantity(Number(e.target.value))
+
+                                        }}
+                                        id=""
+                                        className='border w-[70px] outline-none text-[22px] p-2 pl-4'
+                                    />
+                                </div>
+
+                                <MainButton>
+                                    ADD TO CART
+                                </MainButton>
+
+                                {
+                                    true && (
+                                        <div className='flex gap-2'>
+                                            <WarningAmberRoundedIcon color='warning' />
+                                            <p>
+                                                Last items in stock
+                                            </p>
+                                        </div>
+                                    )
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
