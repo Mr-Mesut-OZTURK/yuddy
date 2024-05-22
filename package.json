@@ -16,16 +16,16 @@
     "dev": "lerna run dev --stream",
     "dev:web": "lerna run dev --scope=web",
     "dev:dashboard": "lerna run dev --scope=dashboard",
-    "dev:shared-ui": "lerna run dev --scope=@my-org/shared-ui",
+    "dev:shared-ui": "lerna run dev --scope=@yuddy/shared-ui",
 
     "build": "lerna run build --stream",
     "build:web": "lerna run build --scope=web",
     "build:dashboard": "lerna run build --scope=dashboard",
-    "build:shared-ui": "lerna run build --scope=@my-org/shared-ui",
+    "build:shared-ui": "lerna run build --scope=@yuddy/shared-ui",
     
     "start": "lerna run start --stream",
     "start:web": "lerna run start --scope=web",
     "start:dashboard": "lerna run start --scope=dashboard",
-    "start:shared-ui": "lerna run start --scope=@my-org/shared-ui"
+    "start:shared-ui": "lerna run start --scope=@yuddy/shared-ui"
   }
 }
