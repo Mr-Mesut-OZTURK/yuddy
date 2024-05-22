@@ -1,22 +1,64 @@
-.slick-slider:hover .slick-prev,
-.slick-slider:hover .slick-next {
+.home_carousel .slick-slider:hover .slick-prev,
+.home_carousel .slick-slider:hover .slick-next {
     display: block !important;
 }
 
-.slick-prev {
+.home_carousel .slick-prev {
     display: none !important;
     margin-left: 25px;
     z-index: 100;
-    background-color: #fff9;
+    background-color: #fff9 !important;
     height: 40px;
     width: 40px;
 }
 
-.slick-next {
+.home_carousel .slick-next {
     display: none !important;
     margin-right: 25px;
     z-index: 100;
-    background-color: #fff9;
+    background-color: #fff9 !important;
+    height: 40px;
+    width: 40px;
+}
+
+
+
+
+.product_carousel .slick-prev {
+    /* display: none !important; */
+    margin-left: 15px;
+    z-index: 100;
+    background-color: #e3111199 !important;
+    height: 40px;
+    width: 40px;
+}
+
+.product_carousel .slick-next {
+    /* display: none !important; */
+    margin-right: 15px;
+    z-index: 100;
+    background-color: #e3111199 !important;
+    height: 40px;
+    width: 40px;
+}
+
+
+
+
+.comment_carousel .slick-prev {
+    /* display: none !important; */
+    margin-left: 25px;
+    z-index: 100;
+    background-color: #e3111199 !important;
+    height: 40px;
+    width: 40px;
+}
+
+.comment_carousel .slick-next {
+    /* display: none !important; */
+    margin-right: 25px;
+    z-index: 100;
+    background-color: #e3111199 !important;
     height: 40px;
     width: 40px;
 }
