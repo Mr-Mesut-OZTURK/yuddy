@@ -13,12 +13,5 @@ var __createBinding = (this && this.__createBinding) || (Object.create ? (functi
 var __exportStar = (this && this.__exportStar) || function(m, exports) {
     for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.YuddyProvider = void 0;
-__exportStar(require("./components"), exports);
-var YuddyProvider_1 = require("./providers/YuddyProvider"); // Export the provider
-Object.defineProperty(exports, "YuddyProvider", { enumerable: true, get: function () { return __importDefault(YuddyProvider_1).default; } });
-__exportStar(require("./theme"), exports);
+__exportStar(require("./muiTheme"), exports);

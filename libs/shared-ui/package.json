@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "license":"MIT",
   "scripts": {
     "build": "tsc",
     "start": "tsc -w",
+    "dev": "storybook dev -p 6006",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

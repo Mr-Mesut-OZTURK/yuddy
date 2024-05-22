@@ -10,9 +10,9 @@ export default {
 
 const Template: StoryFn = (args) => <YButton {...args} />;
 
-export const Primary = Template.bind({});
+export const Playground = Template.bind({});
 
-Primary.args = {
+Playground.args = {
   children: 'Click Me',
   onClick: () => alert('Button clicked!'),
 };
