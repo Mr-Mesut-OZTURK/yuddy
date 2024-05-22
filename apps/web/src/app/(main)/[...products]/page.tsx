@@ -14,6 +14,7 @@ import Accordion from '@mui/material/Accordion';
 import Slider from '@mui/material/Slider';
 import Link from 'next/link';
 import AddRounded from "@mui/icons-material/AddRounded"
+import { TCategories } from '@/ts';
 
 const sortList = [
     "Relevance",
@@ -247,7 +248,7 @@ const ProductsPage = async ({ params, searchParams }: any) => {
     }
 
 
-    const { categories } = await getCategories()
+    const { categories }: { categories: TCategories } = await getCategories()
 
     const filtersList = [
         {
@@ -293,30 +294,48 @@ const ProductsPage = async ({ params, searchParams }: any) => {
 
     console.log("inside", { categories });
 
+    const getValue = (num?: number) => {
+
+        const length = num ?? products?.length
+
+        const value = length === 1
+            ? (categories?.find(item => item.value?.toLowerCase() === products[0]?.toLowerCase()))?.name
+            : (
+                length === 2
+                    ? (categories?.find(item => item.value?.toLowerCase() === products[0]?.toLowerCase()))?.items?.find(item => item.value?.toLowerCase() === products[1]?.toLowerCase())?.name
+                    : (
+                        length === 3
+                            ? (categories?.find(item => item.value?.toLowerCase() === products[0]?.toLowerCase()))?.items?.find(item => item.value?.toLowerCase() === products[1]?.toLowerCase())?.items?.find(item => item.value?.toLowerCase() === products[2]?.toLowerCase())?.name
+                            : ([])
+                    )
+            )
+        return value
+    }
+
     return (
         <div className='container pb-20'>
 
             <div className='my-10'>
                 <Link href="/">
-                    Home
+                    Home&nbsp;
                 </Link>
 
-                <Link href="/shop">
-                    / Shop
+                <Link href={"/" + products[0]} className='capitalize'>
+                    / {getValue(1)}&nbsp;
                 </Link>
 
                 {
                     products[1] ? (
-                        <Link href={products[1] ? "/shop/" + products[1] : ""} className='capitalize'>
-                            / {products[1]}
+                        <Link href={"/" + products[1] ? "/" + products[0] + "/" + products[1] : ""} className='capitalize'>
+                            / {getValue(2)}&nbsp;
                         </Link>
                     ) : ""
                 }
 
                 {
                     products[2] ? (
-                        <Link href={products[2] ? "/shop/" + products[2] : ""} className='capitalize'>
-                            / {products[2]}
+                        <Link href={"#"} className='capitalize'>
+                            / {getValue(3)}
                         </Link>
                     ) : ""
                 }
@@ -325,12 +344,45 @@ const ProductsPage = async ({ params, searchParams }: any) => {
 
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-10 md:gap-x-10'>
                 <div className='col-span-1'>
+                    <div className='border border-b-0 p-2 text-center uppercase font-bold'>
+                        {getValue()}
+                    </div>
                     <div className='border mb-10 p-2'>
+
                         {
-                            (products[1] ? filtersList?.[0]?.items?.find((i: { value: any; }) => i?.value === products?.[1])?.items : filtersList?.[0]?.items)?.map((item: { value: string; name: string; }, index: number) => {
+                            (
+                                products?.length === 1
+                                    ? (categories?.find(item => item.value === products[0]))?.items
+                                    : (
+                                        products?.length === 2
+                                            ? (categories?.find(item => item.value === products[0]))?.items?.find(item => item.value === products[1])?.items
+                                            : (
+                                                products?.length === 3
+                                                    ? (categories?.find(item => item.value === products[0]))?.items?.find(item => item.value === products[1])?.items?.find(item => item.value === products[2])?.items
+                                                    : ([])
+                                            )
+                                    )
+                            )?.map((item: { value: string; name: string; }, index: number) => {
 
                                 return (
-                                    <Link key={index} href={(products[1] ? products[1] + '/' : 'shop/') + item?.value} className='block'>
+                                    <Link
+                                        key={index}
+                                        className='block'
+                                        href={
+                                            products?.length === 0
+                                                ? "/" + products[0] + "/" + item.value
+                                                : (
+                                                    products.length === 1
+                                                        ? "/" + products[0] + "/" + item.value
+                                                        : (
+                                                            products.length === 2
+                                                                ? "/" + products[0] + "/" + products[1] + "/" + item.value
+                                                                : "#"
+                                                        )
+                                                )
+
+                                        }
+                                    >
                                         <div className='text-[#000] p-1 hover:text-red-600 flex justify-between'>
                                             {item.name}
                                             <AddRounded className='text-[18px]' />

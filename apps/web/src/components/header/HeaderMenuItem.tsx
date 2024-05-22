@@ -6,6 +6,25 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { ICategoryItem, TCategories } from '@/ts';
 import Link from 'next/link';
+import { styled } from '@mui/material/styles';
+import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
+
+
+
+
+const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+        backgroundColor: '#fff',
+        // color: 'rgba(0, 0, 0, 0.87)',
+        maxWidth: '100%',
+        // fontSize: theme.typography.pxToRem(12),
+        border: '1px solid #dadde9',
+
+    },
+}));
+
 
 interface IHeaderMenuItemProps {
     // children: React.ReactNode;
@@ -14,58 +33,47 @@ interface IHeaderMenuItemProps {
 
 export const HeaderMenuItem: FC<IHeaderMenuItemProps> = ({ category }) => {
 
-    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-    const open = Boolean(anchorEl);
-    const handleClick = (event: React.MouseEvent<HTMLButtonElement> | any) => {
-        setAnchorEl(event.currentTarget);
-    };
+    const [open, setOpen] = React.useState(false);
+
     const handleClose = () => {
-        setAnchorEl(null);
+        setOpen(false);
+    };
+
+    const handleOpen = () => {
+        setOpen(true);
     };
 
     return (
-        <div onMouseOut={handleClose} onMouseOver={handleClick}>
-            <Button
-                onMouseOver={handleClick}
-                sx={{ zIndex: (theme) => theme.zIndex.modal + 1 }}
-                onClick={handleClick}
-                onMouseEnter={handleClick}
-            >
-                <Link
-                    href={'/' + category?.value}
-                    className='text-[14px] uppercase text-white hover:text-black py-3 block'
-                >
-                    {category?.name}
-                </Link>
-            </Button>
-
-            {
-                category?.items?.length > 0 && (
-                    <Menu
-                        id="basic-menu"
-                        anchorEl={anchorEl}
-                        open={open}
-                        onClose={handleClose}
-                        MenuListProps={{
-                            onMouseOver: handleClick,
-                            sx: {
-                                p: 0,
-                                border: '1px solid #ccc'
-                            }
-                        }}
-                    >
-                        <div className='bg-white flex gap-4 p-2'>
+        <div>
+            <HtmlTooltip
+                placement='top-start'
+                open={open}
+                onClose={handleClose}
+                onOpen={handleOpen}
+                slotProps={{
+                    popper: {
+                        modifiers: [
+                            {
+                                name: 'offset',
+                                options: {
+                                    offset: [0, -15],
+                                },
+                            },
+                        ],
+                    },
+                }}
+                title={
+                    category?.items?.length > 0 ? (
+                        <div className='bg-white flex gap-1' onClick={handleClose}>
                             {
                                 category?.items?.map((menuItem) => {
 
                                     return (
                                         <div
                                             key={menuItem.name}
-                                            onClick={handleClose}
                                             className='flex flex-col items-start hover:bg-white p-4'
                                         >
                                             <Link
-                                                onClick={handleClose}
                                                 href={'/' + category.value + '/' + menuItem.value}
                                                 className='font-bold text-[14px] p-2  mb-1 text-start text-[#555] hover:text-red-500'
                                             >
@@ -79,7 +87,6 @@ export const HeaderMenuItem: FC<IHeaderMenuItemProps> = ({ category }) => {
                                                         return (
                                                             <li key={index}>
                                                                 <Link
-                                                                    onClick={handleClose}
                                                                     href={'/' + category.value + '/' + menuItem.value + '/' + subItem.value}
                                                                     className='text-[14px] block p-1 px-2 text-[#555] hover:text-red-500'
                                                                 >
@@ -94,12 +101,19 @@ export const HeaderMenuItem: FC<IHeaderMenuItemProps> = ({ category }) => {
                                     )
                                 })
                             }
-                            {/* <MenuItem onClick={handleClose}>Profile</MenuItem>
-                            <MenuItem onClick={handleClose}>My account</MenuItem> */}
                         </div>
-                    </Menu>
-                )
-            }
+                    ) : null
+                }
+            >
+                {/* <Button sx={{ zIndex: (theme) => theme.zIndex.modal + 1 }} > */}
+                <Link
+                    href={'/' + category?.value}
+                    className='text-[14px] uppercase text-white hover:text-black py-3 block'
+                >
+                    {category?.name}
+                </Link>
+                {/* </Button> */}
+            </HtmlTooltip>
         </div>
     )
 }

@@ -1,10 +1,14 @@
+
+import { HeaderDropdown } from '@/components'
 import React from 'react'
 
 export const HeaderTop = () => {
     return (
-        <div className='bg-black p-2 text-white hidden sm:block'>
+        <div className='bg-black  text-white hidden sm:block'>
             <div className='container'>
-                HeaderTop
+                <div>
+                    <HeaderDropdown />
+                </div>
             </div>
         </div>
     )
