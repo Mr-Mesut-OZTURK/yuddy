@@ -1,6 +1,9 @@
 ## for start project
 
 ```js
+    // install dependencies
+    npm install
+
     // for locally run json db
     npm run dev:db
 
