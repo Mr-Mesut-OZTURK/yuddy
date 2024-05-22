@@ -1,26 +1,28 @@
 "use client"
 
-import Image from 'next/image';
+import { YButton } from '@yuddy/shared-ui';
+// import React from 'react'
 import Link from 'next/link';
-import React from 'react'
+import { FC } from 'react';
 import Slider, { Settings } from "react-slick";
 
 
+export interface IHomeCarouselItem {
+    imgUrl: string;
+    title: string;
+    desc1: string;
+    desc2: string;
+    subtitle: string;
+}
 
-type PropType = {
-    slides: Array<{
-        imgUrl: string;
-        title: string;
-        desc1: string;
-        desc2: string;
-        subtitle: string;
-    }>;
+export interface IHomeCarouselProps {
+    items: Array<IHomeCarouselItem>;
     settings?: Settings
 }
 
 
-export const HomeCarousel: React.FC<PropType> = (props) => {
-    const { slides = [], settings } = props
+export const HomeCarousel: FC<IHomeCarouselProps> = (props) => {
+    const { items = [], settings } = props
 
     const localSettings: Settings = {
         dots: false,
@@ -33,17 +35,14 @@ export const HomeCarousel: React.FC<PropType> = (props) => {
     };
     // console.log({ slides });
     return (
-        <section className=''>
+        <section className='home_carousel'>
             <Slider {...(settings ?? localSettings)}>
 
                 {
-                    slides?.map((item, index) => {
+                    items?.map((item, index) => {
 
                         return (
-                            <div
-                                key={index}
-                                className='relative'
-                            >
+                            <div key={index} className='relative' >
                                 <img src={item.imgUrl} alt="" />
 
                                 <div className='absolute right-0 left-[50%] top-0 bottom-0 flex items-center justify-center'>
@@ -64,9 +63,12 @@ export const HomeCarousel: React.FC<PropType> = (props) => {
                                         </h2>
 
                                         <Link href="">
-                                            <button className='bg-red-600 hover:scale-105 active:bg-red-500 active:scale-95 text-white p-1 text-[10px] sm:p-2 sm:text-[14px] lg:p-3 lg:text-[16px]'>
+                                            <YButton
+                                                color='secondary'
+                                            //  className='bg-red-600 hover:scale-105 active:bg-red-500 active:scale-95 text-white p-1 text-[10px] sm:p-2 sm:text-[14px] lg:p-3 lg:text-[16px]'
+                                            >
                                                 Shop Today
-                                            </button>
+                                            </YButton>
                                         </Link>
                                     </div>
 
