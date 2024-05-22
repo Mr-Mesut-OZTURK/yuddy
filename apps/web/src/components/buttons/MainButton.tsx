@@ -10,4 +10,4 @@ interface ButtonProps extends MuiButtonProps {
     sx?: SxProps;
 }
 
-export const MainButton = (props: ButtonProps) => <YButton {...props} />
+export const MainButton = ({ sx, onClick, ...props }: ButtonProps) => <YButton {...props} sx={sx} onClick={onClick} />
