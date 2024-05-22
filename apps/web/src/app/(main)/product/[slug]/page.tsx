@@ -1,4 +1,4 @@
-import { MainButton, MainProductCard } from '@/components'
+import { MainButton, MainProductCard, PoliciesComponent } from '@/components'
 import { BottomInfoSection, ProductCarousel, ProductDetailCarousel } from '@/sections'
 import Image from 'next/image'
 import React from 'react'
@@ -18,7 +18,7 @@ const ProductDetails = () => {
 
                     {/* *************** description **************** */}
                     <div>
-                        <div>
+                        <div className='pb-10'>
                             <h2 className='text-[24px] font-[500] mb-5'>
                                 CASUAL SHOES SNEAKER
                             </h2>
@@ -63,7 +63,7 @@ const ProductDetails = () => {
                                 </li>
                             </ul>
 
-                            <div className='flex items-end justify-between gap-2'>
+                            <div className='flex flex-col sm:flex-row items-center sm:items-end justify-between gap-2'>
                                 <div className='flex flex-col'>
                                     <span>
                                         Quantity :
@@ -104,12 +104,13 @@ const ProductDetails = () => {
                                 }
                             </div>
                         </div>
+                        <PoliciesComponent />
                     </div>
                 </div>
             </div>
 
             {/* *************** bottom info **************** */}
-            <div className='container'>
+            <div className='container pb-10'>
                 <BottomInfoSection
                     description={
                         <div className='text-[#666]'>
