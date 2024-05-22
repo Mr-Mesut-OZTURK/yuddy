@@ -21,6 +21,7 @@ import { blue } from '@mui/material/colors';
 import { MainButton } from '../buttons'
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
 import Link from 'next/link'
+import { ProductDetailCarousel } from '@/sections'
 
 interface IComponentProps {
     className?: string
@@ -108,14 +109,14 @@ export const MainProductCard = ({ className }: IComponentProps) => {
                     sx: {
                         width: '90%',
                         maxWidth: "900px",
-                        bgcolor: 'red'
+                        bgcolor: '#fff'
                     }
                 }}
             >
-                <div className='p-5 bg-white'>
-                    <div className='grid grid-cols-1 sm:grid-cols-2 '>
-                        <div className='hidden sm:block'>
-                            Slider Section
+                <div className='p-5 pb-10 bg-white overflow-y-scroll'>
+                    <div className='grid gap-10 grid-cols-1 sm:grid-cols-2 '>
+                        <div className='hidden sm:block pb-10'>
+                            <ProductDetailCarousel />
                         </div>
 
                         <div>

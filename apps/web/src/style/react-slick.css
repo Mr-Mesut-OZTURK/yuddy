@@ -62,3 +62,21 @@
     height: 40px;
     width: 40px;
 }
+
+.product_details_carousel .slick-prev {
+    /* display: none !important; */
+    margin-left: -20px;
+    z-index: 100;
+    background-color: #e3111199 !important;
+    height: 40px;
+    width: 40px;
+}
+
+.product_details_carousel .slick-next {
+    /* display: none !important; */
+    margin-right: -20px;
+    z-index: 100;
+    background-color: #e3111199 !important;
+    height: 40px;
+    width: 40px;
+}
