@@ -72,5 +72,205 @@
         {
           "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/7.jpg"
         }
-      ]
+      ],
+
+
+      "categories" : [
+        {
+            "name": "Shop",
+            "value": "shop",
+            "items": [
+                {
+                    "name": "Autoparts",
+                    "value": "autoparts",
+                    "items": [
+                        {
+                            "name": "Engine Parts",
+                            "value": "engine-parts"
+                        },
+                        {
+                            "name": "Exhaust Parts",
+                            "value": "exhaust-parts"
+                        },
+                        {
+                            "name": "Brake Parts",
+                            "value": "brake-parts"
+                        },
+                        {
+                            "name": "Body Parts",
+                            "value": "body-parts"
+                        }
+                    ]
+                },
+                {
+                    "name": "Fashion",
+                    "value": "fashion",
+                    "items": [
+                        {
+                            "name": "Men",
+                            "value": "men"
+                        },
+                        {
+                            "name": "Women",
+                            "value": "women"
+                        },
+                        {
+                            "name": "Kids",
+                            "value": "kids"
+                        },
+                        {
+                            "name": "Accessories",
+                            "value": "accessories"
+                        }
+                    ]
+                },
+                {
+                    "name": "Furniture",
+                    "value": "furniture",
+                    "items": [
+                        {
+                            "name": "Living Room",
+                            "value": "living-room"
+                        },
+                        {
+                            "name": "Kitchen",
+                            "value": "kitchen"
+                        },
+                        {
+                            "name": "Office",
+                            "value": "office"
+                        },
+                        {
+                            "name": "Home Decor",
+                            "value": "home-decor"
+                        }
+                    ]
+                },
+                {
+                    "name": "Jewellery",
+                    "value": "Jewellery",
+                    "items": [
+                        {
+                            "name": "Rings",
+                            "value": "rings"
+                        },
+                        {
+                            "name": "Bracelets",
+                            "value": "bracelets"
+                        },
+                        {
+                            "name": "Necklaces",
+                            "value": "necklaces"
+                        },
+                        {
+                            "name": "Wedding Bands",
+                            "value": "wedding-bands"
+                        }
+                    ]
+                }
+            ]
+        },
+    
+        {
+            "name": "Electronics",
+            "value": "Electronics",
+            "items": [
+                {
+                    "name": "Mobiles",
+                    "value": "mobiles",
+                    "items": [
+                        {
+                            "name": "Apple",
+                            "value": "apple"
+                        },
+                        {
+                            "name": "BlackBerry",
+                            "value": "blackberry"
+                        },
+                        {
+                            "name": "OnePlus",
+                            "value": "oneplus"
+                        },
+                        {
+                            "name": "Sonny",
+                            "value": "sonny"
+                        }
+                    ]
+                },
+    
+                {
+                    "name": "Cameras",
+                    "value": "cameras",
+                    "items": [
+                        {
+                            "name": "DSLR",
+                            "value": "dslr"
+                        },
+                        {
+                            "name": "Lences",
+                            "value": "lences"
+                        },
+                        {
+                            "name": "Tripods",
+                            "value": "tripods"
+                        },
+                        {
+                            "name": "Batteries",
+                            "value": "batteries"
+                        }
+                    ]
+                }
+            ]
+        },
+    
+        {
+            "name": "Sport && Books",
+            "value": "sport-books",
+            "items": [
+                {
+                    "name": "Sports",
+                    "value": "sports",
+                    "items": [
+                        {
+                            "name": "Football",
+                            "value": "football"
+                        },
+                        {
+                            "name": "Vollyball",
+                            "value": "vollyball"
+                        },
+                        {
+                            "name": "Cricket",
+                            "value": "cricket"
+                        }
+                    ]
+                },
+    
+                {
+                    "name": "Books",
+                    "value": "books",
+                    "items": [
+                        {
+                            "name": "Literature",
+                            "value": "literature"
+                        },
+                        {
+                            "name": "Philosophy",
+                            "value": "philosophy"
+                        },
+                        {
+                            "name": "Academics",
+                            "value": "academics"
+                        }
+                    ]
+                }
+            ]
+        },
+    
+        {
+            "name": "Sale",
+            "value": "sale",
+            "items": []
+        }
+    ]
 }
