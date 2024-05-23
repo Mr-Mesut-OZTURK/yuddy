@@ -3,37 +3,76 @@
 import React, { useState } from 'react'
 import ExpandLessRoundedIcon from '@mui/icons-material/ExpandLessRounded';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
-export const HeaderDropdown = ({ }) => {
 
-    const [isExpand, setIsExpand] = useState(false);
-    const [selectedItem, setSelectedItem] = useState("English");
+
+
+
+export const HeaderDropdown = ({ items }: { items: any }) => {
+
+
+    const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+    const [selectedItem, setSelectedItem] = useState(items?.[0]);
+
+    const open = Boolean(anchorEl);
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
     return (
-        <div className='w-auto relative p-2'
-            onMouseLeave={() => setIsExpand(false)}
-        >
-            <div
-                className='cursor-pointer flex'
-                onClick={() => setIsExpand(!isExpand)}
+        <div>
+            <Button
+                id="basic-button"
+                aria-controls={open ? 'basic-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+                className='text-black sm:text-white capitalize'
             >
                 {selectedItem}
-                <div className={`transition-all duration-500 ${!isExpand ? "rotate-180" : "rotate-90"}`}>
+                <div className={`transition-all duration-500 ${!open ? "rotate-180" : "rotate-90"}`}>
                     <ExpandLessRoundedIcon />
                 </div>
-                {/* {isExpand ? (<ExpandLessRoundedIcon />) : (<ExpandMoreRoundedIcon />)} */}
-            </div>
+            </Button>
 
-            <div className={`transition-[height] duration-500 overflow-hidden absolute top-[100%] z-10 bg-black  ${isExpand ? "p-2" : "h-0"}`}>
-                <ul>
-                    <li>
-                        English
-                    </li>
-                    <li>
-                        French
-                    </li>
-                </ul>
-            </div>
+
+            <Menu
+                id="basic-menu"
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                    sx: {
+                        bgcolor: '#fff',
+                        border: '1px solid #ccc',
+                        padding: 0
+                    }
+                }}
+            >
+                {
+                    items?.map((item: string, index: number) => {
+
+                        return (
+                            <MenuItem
+                                key={index}
+                                onClick={() => {
+                                    setSelectedItem(item)
+                                    handleClose()
+                                }}
+                            >
+                                {item}
+                            </MenuItem>
+                        )
+                    })
+                }
+            </Menu>
         </div>
-    )
+    );
 }

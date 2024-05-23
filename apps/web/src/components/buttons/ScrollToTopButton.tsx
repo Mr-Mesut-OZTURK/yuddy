@@ -49,7 +49,11 @@ export const ScrollToTopButton = (props: Props) => {
             <Box
                 onClick={handleClick}
                 role="presentation"
-                sx={{ position: 'fixed', bottom: { xs: 90, sm: 30 }, right: { xs: 80, sm: 90 } }}
+                sx={{
+                    position: 'fixed',
+                    bottom: { xs: 25, sm: 25 },
+                    right: { xs: 90, sm: 90 }
+                }}
             >
                 {children}
             </Box>

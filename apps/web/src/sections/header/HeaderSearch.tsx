@@ -3,19 +3,32 @@ import Image from 'next/image'
 import { IconButton, Badge } from '@mui/material'
 import SearchIcon from '@mui/icons-material/Search';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
-import MenuIcon from '@mui/icons-material/Menu';
 import Link from 'next/link';
+import { MobileMenu } from './MobileMenu';
+import { TCategories } from '@/ts';
 
 
-export const HeaderSearch = () => {
+const getCategories = async () => {
+
+    const res = await fetch("http://localhost:3005/categories", { cache: 'no-cache' })
+    const categories = await res.json()
+    // console.log({ categories });
+
+    return { categories }
+}
+
+export const HeaderSearch = async () => {
+
+    const { categories }: { categories: TCategories } = await getCategories()
+
+
     return (
         <div className='bg-white  text-black'>
             <div className='container flex items-center justify-between p-2'>
 
                 <div className='flex items-center'>
-                    <IconButton className='flex sm:hidden'>
-                        <MenuIcon sx={{ cursor: 'pointer', color: '#666' }} />
-                    </IconButton>
+
+                    <MobileMenu categories={categories} />
 
                     <Link href="/">
                         <Image

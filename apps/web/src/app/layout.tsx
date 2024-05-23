@@ -37,7 +37,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           <FooterMain />
 
-          <Fab color="primary" aria-label="add" sx={{ position: 'fixed', bottom: 20, right: { xs: 70, sm: 20 }, bgcolor: '#4400f0' }}>
+          <Fab
+            color="primary"
+            aria-label="add"
+            sx={{
+              position: 'fixed',
+              bottom: 20,
+              right: { xs: 20, sm: 20 },
+              bgcolor: '#4400f0',
+            }}
+          >
             <ModeCommentOutlinedIcon />
           </Fab>
 
