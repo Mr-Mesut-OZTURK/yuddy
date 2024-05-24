@@ -1,4 +1,4 @@
-import { MainButton, MainProductCard, PoliciesComponent } from '@/components'
+import { AddToChartButton, MainButton, MainProductCard, PoliciesComponent } from '@/components'
 import { BottomInfoSection, ProductCarousel, ProductDetailCarousel } from '@/sections'
 import Image from 'next/image'
 import React from 'react'
@@ -83,14 +83,7 @@ const ProductDetails = () => {
                                     />
                                 </div>
 
-                                <MainButton
-                                // onClick={() => {
-                                //     // setDetailDialog(false)
-                                //     // setChartDialog(true)
-                                // }}
-                                >
-                                    ADD TO CART
-                                </MainButton>
+                                <AddToChartButton />
 
                                 {
                                     true && (

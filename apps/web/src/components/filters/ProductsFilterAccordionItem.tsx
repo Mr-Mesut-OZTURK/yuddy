@@ -1,15 +1,6 @@
 import React from 'react'
-
-import Accordion from '@mui/material/Accordion';
-import AccordionActions from '@mui/material/AccordionActions';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Button from '@mui/material/Button';
-import Link from 'next/link';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import Checkbox from '@mui/material/Checkbox';
-import FormControlLabel from '@mui/material/FormControlLabel';
+import { Accordion, AccordionSummary, AccordionDetails, Checkbox, FormControlLabel } from '@mui/material';
 
 
 interface IProductsFilterAccordionItem {
@@ -22,8 +13,9 @@ interface IProductsFilterAccordionItem {
     }
 }
 
-
 export const ProductsFilterAccordionItem = ({ item }: IProductsFilterAccordionItem) => {
+
+    if (!item?.items) return null
 
     return (
         <Accordion
@@ -40,19 +32,24 @@ export const ProductsFilterAccordionItem = ({ item }: IProductsFilterAccordionIt
                 aria-controls="panel1-content"
                 id="panel1-header"
                 className='bg-white m-0 py-0 min-h-0 border-none'
+                sx={{ m: 0 }}
             >
                 {item.title}
             </AccordionSummary>
-            <AccordionDetails
-                className='bg-white border-t-0 shadow-none'
-            >
+
+            <AccordionDetails className='bg-white border-t-0 shadow-none' >
                 <ul>
                     {
-                        item.items?.map((i, index) => {
+                        item?.items?.map((i, index) => {
 
                             return (
                                 <li key={index} className=''>
-                                    <FormControlLabel control={<Checkbox />} label={i.name} />
+                                    <FormControlLabel
+                                        control={<Checkbox />}
+
+                                        label={i?.name}
+                                        className='text-[#999] gap-0 p-0'
+                                    />
                                 </li>
                             )
                         })

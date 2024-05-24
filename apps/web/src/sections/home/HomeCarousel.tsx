@@ -1,5 +1,6 @@
 "use client"
 
+import { MainButton } from '@/components';
 import { YButton } from '@yuddy/shared-ui';
 // import React from 'react'
 import Link from 'next/link';
@@ -63,12 +64,23 @@ export const HomeCarousel: FC<IHomeCarouselProps> = (props) => {
                                         </h2>
 
                                         <Link href="">
-                                            <YButton
+                                            <MainButton
                                                 color='secondary'
+                                                className='text-[10px]'
+                                                sx={{
+                                                    fontSize: {
+                                                        xs: '10px',
+                                                        sm: '16px'
+                                                    },
+                                                    height: {
+                                                        xs: '32px',
+                                                        sm: '48px'
+                                                    }
+                                                }}
                                             //  className='bg-red-600 hover:scale-105 active:bg-red-500 active:scale-95 text-white p-1 text-[10px] sm:p-2 sm:text-[14px] lg:p-3 lg:text-[16px]'
                                             >
                                                 Shop Today
-                                            </YButton>
+                                            </MainButton>
                                         </Link>
                                     </div>
 

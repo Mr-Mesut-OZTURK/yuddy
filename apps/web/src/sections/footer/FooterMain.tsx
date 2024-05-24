@@ -1,5 +1,6 @@
 import { MainButton, MobileFooterItem } from '@/components'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 
@@ -113,9 +114,9 @@ export const FooterMain = () => {
                         {
                             footerList[1].children.map((child) => {
                                 return (
-                                    <h6 key={child.text} className='mb-2 text-[14px]'>
+                                    <Link href="#" key={child.text} className='mb-2 text-[14px] block'>
                                         {child.text}
-                                    </h6>
+                                    </Link>
                                 )
                             })
                         }
@@ -130,9 +131,9 @@ export const FooterMain = () => {
                         {
                             footerList[2].children.map((child) => {
                                 return (
-                                    <h6 key={child.text} className='mb-2 text-[14px]'>
+                                    <Link href="#" key={child.text} className='mb-2 text-[14px] block'>
                                         {child.text}
-                                    </h6>
+                                    </Link>
                                 )
                             })
                         }

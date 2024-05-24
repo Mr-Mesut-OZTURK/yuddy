@@ -1,20 +1,15 @@
-import { MainProductCard, ProductsFilterAccordionItem, RangeSlider } from '@/components';
-import { notFound, } from 'next/navigation';
 import React from 'react'
-
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Accordion from '@mui/material/Accordion';
-import Slider from '@mui/material/Slider';
 import Link from 'next/link';
+import { notFound, } from 'next/navigation';
+import { MenuItem, FormControl, Select, AccordionSummary, AccordionDetails, Accordion } from '@mui/material';
+
 import AddRounded from "@mui/icons-material/AddRounded"
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
 import { TCategories } from '@/ts';
+import { MainButton, MainProductCard, ProductsFilterAccordionItem, RangeSlider } from '@/components';
+
+
 
 const sortList = [
     "Relevance",
@@ -24,221 +19,16 @@ const sortList = [
     "Price, high to low"
 ]
 
-// const categories = [
-//     {
-//         name: "Shop",
-//         value: "shop",
-//         items: [
-//             {
-//                 name: "Autoparts",
-//                 value: "autoparts",
-//                 items: [
-//                     {
-//                         name: "Engine Parts",
-//                         value: "engine-parts",
-//                     },
-//                     {
-//                         name: "Exhaust Parts",
-//                         value: "exhaust-parts",
-//                     },
-//                     {
-//                         name: "Brake Parts",
-//                         value: "brake-parts",
-//                     },
-//                     {
-//                         name: "Body Parts",
-//                         value: "body-parts",
-//                     },
-//                 ]
-//             },
-//             {
-//                 name: "Fashion",
-//                 value: "fashion",
-//                 items: [
-//                     {
-//                         name: "Men",
-//                         value: "men",
-//                     },
-//                     {
-//                         name: "Women",
-//                         value: "women",
-//                     },
-//                     {
-//                         name: "Kids",
-//                         value: "kids",
-//                     },
-//                     {
-//                         name: "Accessories",
-//                         value: "accessories",
-//                     },
-//                 ]
-//             },
-//             {
-//                 name: "Furniture",
-//                 value: "furniture",
-//                 items: [
-//                     {
-//                         name: "Living Room",
-//                         value: "living-room",
-//                     },
-//                     {
-//                         name: "Kitchen",
-//                         value: "kitchen",
-//                     },
-//                     {
-//                         name: "Office",
-//                         value: "office",
-//                     },
-//                     {
-//                         name: "Home Decor",
-//                         value: "home-decor",
-//                     },
-//                 ]
-//             },
-//             {
-//                 name: "Jewellery",
-//                 value: "Jewellery",
-//                 items: [
-//                     {
-//                         name: "Rings",
-//                         value: "rings",
-//                     },
-//                     {
-//                         name: "Bracelets",
-//                         value: "bracelets",
-//                     },
-//                     {
-//                         name: "Necklaces",
-//                         value: "necklaces",
-//                     },
-//                     {
-//                         name: "Wedding Bands",
-//                         value: "wedding-bands",
-//                     },
-//                 ]
-//             },
-//         ]
-//     },
-
-//     {
-//         name: "Electronics",
-//         value: "Electronics",
-//         items: [
-//             {
-//                 name: "Mobiles",
-//                 value: "mobiles",
-//                 items: [
-//                     {
-//                         name: "Apple",
-//                         value: "apple",
-//                     },
-//                     {
-//                         name: "BlackBerry",
-//                         value: "blackberry",
-//                     },
-//                     {
-//                         name: "OnePlus",
-//                         value: "oneplus",
-//                     },
-//                     {
-//                         name: "Sonny",
-//                         value: "sonny",
-//                     },
-//                 ]
-//             },
-
-//             {
-//                 name: "Cameras",
-//                 value: "cameras",
-//                 items: [
-//                     {
-//                         name: "DSLR",
-//                         value: "dslr",
-//                     },
-//                     {
-//                         name: "Lences",
-//                         value: "lences",
-//                     },
-//                     {
-//                         name: "Tripods",
-//                         value: "tripods",
-//                     },
-//                     {
-//                         name: "Batteries",
-//                         value: "batteries",
-//                     },
-//                 ]
-//             },
-//         ]
-//     },
-
-//     {
-//         name: "Sport && Books",
-//         value: "sport-books",
-//         items: [
-//             {
-//                 name: "Sports",
-//                 value: "sports",
-//                 items: [
-//                     {
-//                         name: "Football",
-//                         value: "football",
-//                     },
-//                     {
-//                         name: "Vollyball",
-//                         value: "vollyball",
-//                     },
-//                     {
-//                         name: "Cricket",
-//                         value: "cricket",
-//                     }
-//                 ]
-//             },
-
-//             {
-//                 name: "Books",
-//                 value: "books",
-//                 items: [
-//                     {
-//                         name: "Literature",
-//                         value: "literature",
-//                     },
-//                     {
-//                         name: "Philosophy",
-//                         value: "philosophy",
-//                     },
-//                     {
-//                         name: "Academics",
-//                         value: "academics",
-//                     }
-//                 ]
-//             },
-//         ]
-//     },
-
-//     {
-//         name: "Sale",
-//         value: "sale",
-//         items: []
-//     }
-// ]
-
 
 const getCategories = async () => {
-
     const res = await fetch("http://localhost:3005/categories", { cache: 'no-cache' })
     const categories = await res.json()
-    // console.log({ categories });
-
     return { categories }
 }
 
-const ProductsPage = async ({ params, searchParams }: any) => {
+const ProductsPage = async ({ params }: any) => {
 
     const { products } = params
-    // const { category } = searchParams
-    // console.log({ params, searchParams });
-
 
     if (products[0] === "not-found") {
         return notFound()
@@ -253,7 +43,19 @@ const ProductsPage = async ({ params, searchParams }: any) => {
     const filtersList = [
         {
             title: "Categories",
-            items: categories
+            items: (
+                products?.length === 1
+                    ? (categories?.find(item => item.value === products[0]))?.items
+                    : (
+                        products?.length === 2
+                            ? (categories?.find(item => item.value === products[0]))?.items?.find(item => item.value === products[1])?.items
+                            : (
+                                products?.length === 3
+                                    ? (categories?.find(item => item.value === products[0]))?.items?.find(item => item.value === products[1])?.items?.find(item => item.value === products[2])?.items
+                                    : ([])
+                            )
+                    )
+            )
 
         },
         {
@@ -292,7 +94,6 @@ const ProductsPage = async ({ params, searchParams }: any) => {
         },
     ]
 
-    console.log("inside", { categories });
 
     const getValue = (num?: number) => {
 
@@ -312,10 +113,13 @@ const ProductsPage = async ({ params, searchParams }: any) => {
         return value
     }
 
-    return (
-        <div className='container pb-20'>
+    if (!getValue()) return notFound()
 
-            <div className='my-10'>
+    return (
+        <div className='container pb-20 pt-5'>
+
+            {/* **************** breadcrumbs ****************** */}
+            <div className='my-5 hidden sm:block'>
                 <Link href="/">
                     Home&nbsp;
                 </Link>
@@ -343,10 +147,14 @@ const ProductsPage = async ({ params, searchParams }: any) => {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-y-10 md:gap-x-10'>
-                <div className='col-span-1'>
+
+                {/* **************** desktop filters ****************** */}
+                <div className='col-span-1 hidden sm:block'>
+
                     <div className='border border-b-0 p-2 text-center uppercase font-bold'>
                         {getValue()}
                     </div>
+
                     <div className='border mb-10 p-2'>
 
                         {
@@ -362,7 +170,7 @@ const ProductsPage = async ({ params, searchParams }: any) => {
                                                     : ([])
                                             )
                                     )
-                            )?.map((item: { value: string; name: string; }, index: number) => {
+                            )?.map((item, index) => {
 
                                 return (
                                     <Link
@@ -392,13 +200,14 @@ const ProductsPage = async ({ params, searchParams }: any) => {
                             })
                         }
                     </div>
+
                     <div className='border'>
-                        <h6 className='text-center p-2 border-b-[1px]'>
+                        <h6 className='text-center p-2 border-b-[1px] font-bold'>
                             FILTER BY
                         </h6>
 
                         {
-                            filtersList?.map((item, index) => {
+                            filtersList?.map((item: any, index) => {
 
                                 return (
                                     <ProductsFilterAccordionItem
@@ -442,35 +251,37 @@ const ProductsPage = async ({ params, searchParams }: any) => {
                     </div>
                 </div>
 
+                {/* **************** main ****************** */}
                 <div className='col-span-2 lg:col-span-3 xl:col-span-4 flex flex-col gap-5'>
 
                     <div
                         className={`
                             bg-[url(https://demo4techies.com/prestashop/shopkart-lite/c/3-category_default/Shop.jpg)]
-                            h-[180px] bg-no-repeat w-full bg-cover 
+                            h-[180px] bg-no-repeat w-full bg-cover hidden sm:block
                         `}
                     />
 
-                    <h3 className='text-[28px] uppercase font-[500] text-[#666]'>
-                        Shop
+                    <h3 className='text-[28px] uppercase font-[500] text-[#666] text-center sm:text-start'>
+                        {getValue()}
                     </h3>
 
-                    <p className='text-[14px] text-[#999]'>
+                    <p className='text-[14px] text-[#999] hidden sm:block'>
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
                     </p>
 
-                    <div className='bg-[#f9f9f9] border-[#ccc] border-[1px] p-5'>
-                        <div className='flex items-center text-[#666]'>
+                    {/* **************** sort section ****************** */}
+                    <div className='bg-[#f9f9f9] border-[#ccc] border-[1px] p-3 sm:p-5'>
+                        <div className='flex flex-col-reverse sm:flex-row gap-3 sm:items-center text-[#666]'>
                             <p className='flex-1'>
                                 There are 12 products.
                             </p>
 
                             <div className='flex items-center gap-3'>
-                                <p>
+                                <p className='hidden sm:block'>
                                     Sort by :
                                 </p>
 
-                                <FormControl className='min-w-[200px]'>
+                                <FormControl className='min-w-[200px] w-full sm:w-auto'>
                                     {/* <InputLabel id="demo-simple-select-label">Age</InputLabel> */}
                                     <Select
                                         labelId="demo-simple-select-label"
@@ -479,7 +290,7 @@ const ProductsPage = async ({ params, searchParams }: any) => {
                                         defaultValue={sortList[0]}
                                         // label="Age"
                                         //   onChange={handleChange}
-                                        className='bg-white border-[#ccc'
+                                        className='bg-white border-[#ccc] h-[48px]'
                                     >
                                         {
                                             sortList?.map((item) => {
@@ -494,15 +305,18 @@ const ProductsPage = async ({ params, searchParams }: any) => {
                                         }
                                     </Select>
                                 </FormControl>
+
+                                <MainButton>
+                                    FILTER
+                                </MainButton>
                             </div>
                         </div>
                     </div>
 
+                    {/* **************** products grid ****************** */}
                     <div className='grid gap-3 sm:gap-10 grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
-
                         {
                             [1, 2, 3, 4, 5, 6, 7, 8]?.map((item, index) => {
-
                                 return (
                                     <MainProductCard
                                         key={index}
@@ -512,6 +326,7 @@ const ProductsPage = async ({ params, searchParams }: any) => {
                         }
                     </div>
                 </div>
+
             </div>
 
         </div>

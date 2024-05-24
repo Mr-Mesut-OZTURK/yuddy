@@ -1,38 +1,28 @@
 "use client"
+
+import Link from 'next/link'
+import Image from 'next/image'
 import React, { useState } from 'react'
+import Dialog from '@mui/material/Dialog';
 import { IconButton } from '@mui/material'
 import { YButton } from '@yuddy/shared-ui'
-import Image from 'next/image'
 import SearchIcon from '@mui/icons-material/Search';
-import WarningAmberRoundedIcon from '@mui/icons-material/WarningAmberRounded';
-import Button from '@mui/material/Button';
-import Avatar from '@mui/material/Avatar';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Dialog from '@mui/material/Dialog';
-import PersonIcon from '@mui/icons-material/Person';
-import AddIcon from '@mui/icons-material/Add';
-import Typography from '@mui/material/Typography';
-import { blue } from '@mui/material/colors';
-import { MainButton } from '../buttons'
 import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
-import Link from 'next/link'
+import WarningAmberRoundedIcon from '@mui/icons-material/WarningAmberRounded';
+
+import { MainButton } from '../buttons'
 import { ProductDetailCarousel } from '@/sections'
 
 interface IComponentProps {
     className?: string
 }
+
 export const MainProductCard = ({ className }: IComponentProps) => {
 
     const [detailDialog, setDetailDialog] = useState(false)
     const [chartDialog, setChartDialog] = useState(false)
 
     const [quantity, setQuantity] = useState(1)
-
 
     return (
         <div className={`${className}`}>
@@ -77,7 +67,7 @@ export const MainProductCard = ({ className }: IComponentProps) => {
 
             {/* ************ info ************ */}
             <div className='flex flex-col gap-4 items-center'>
-                <Link href={`product/${"shoe"}`} className='text-center text-[14px] mt-2'>
+                <Link href={`/product/${"shoe"}`} className='text-center text-[14px] mt-2'>
                     CASUAL SHOES SNEAKER
                 </Link>
                 <p className='font-bold flex gap-2 '>

@@ -1,276 +1,284 @@
 {
-     "homeCarouselArray" : [
-        {
-          "title": "Mega Store",
-          "desc1": "Trending",
-          "desc2": "Fashion Look",
-          "subtitle": "New Clothes, New Passion",
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/modules/ps_imageslider/images/8187e2cea6dcd5e1b98a1b1af132211cf94c9a8e_Slider-1.jpg"
-        },
-        {
-          "title": "Dress Well",
-          "desc1": "Summer",
-          "desc2": "Collection",
-          "subtitle": "Sale Up To 40% Off",
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/modules/ps_imageslider/images/4d4d5897cf3d07949875e686ef53f604262c00c5_Slider-2.jpg"
-        }
-      ],
-      
-       "homeOffersArray" : [
-        {
-          "title": "New Arrivals",
-          "desc": "Women Collections",
-         "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/offer-img-1.jpg"
-        },
-        {
-         "title": "New Arrivals",
-          "desc": "Man Collections",
-         "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/offer-img-2.jpg"
-        }
-      ],
+  "banners": [
+    {
+      "title": "Mega Store",
+      "desc1": "Trending",
+      "desc2": "Fashion Look",
+      "subtitle": "New Clothes, New Passion",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/modules/ps_imageslider/images/8187e2cea6dcd5e1b98a1b1af132211cf94c9a8e_Slider-1.jpg"
+    },
+    {
+      "title": "Dress Well",
+      "desc1": "Summer",
+      "desc2": "Collection",
+      "subtitle": "Sale Up To 40% Off",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/modules/ps_imageslider/images/4d4d5897cf3d07949875e686ef53f604262c00c5_Slider-2.jpg"
+    }
+  ],
 
-      "homeCommentsArray" : [
-        {
-          "name": "Alex Carter",
-          "jobTitle": "Web Developer",
-          "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/testimonial-img-1.jpg"
-        },
-        {
-          "name": "Alina Joy",
-          "jobTitle": "Customer",
-          "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which slightly believable.",
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/testimonial-img-2.jpg"
-        },
-        {
-          "name": "John Doe",
-          "jobTitle": "Web Designer",
-          "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/testimonial-img-3.jpg"
-        }
-      ],
-      
-       "homeBrandsArray" : [
-        {
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/1.jpg"
-        },
-        {
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/2.jpg"
-        },
-        {
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/3.jpg"
-        },
-        {
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/4.jpg"
-        },
-        {
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/5.jpg"
-        },
-        {
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/6.jpg"
-        },
-        {
-          "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/7.jpg"
-        }
-      ],
+  "homeOffersArray": [
+    {
+      "title": "New Arrivals",
+      "desc": "Women Collections",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/offer-img-1.jpg"
+    },
+    {
+      "title": "New Arrivals",
+      "desc": "Man Collections",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/offer-img-2.jpg"
+    }
+  ],
 
+  "homeCommentsArray": [
+    {
+      "name": "Alex Carter",
+      "jobTitle": "Web Developer",
+      "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/testimonial-img-1.jpg"
+    },
+    {
+      "name": "Alina Joy",
+      "jobTitle": "Customer",
+      "desc": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which slightly believable.",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/testimonial-img-2.jpg"
+    },
+    {
+      "name": "John Doe",
+      "jobTitle": "Web Designer",
+      "desc": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/testimonial-img-3.jpg"
+    }
+  ],
 
-      "categories" : [
+  "brands": [
+    {
+      "name": "brand 1",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/1.jpg"
+    },
+    {
+      "name": "brand 2",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/2.jpg"
+    },
+    {
+      "name": "brand 3",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/3.jpg"
+    },
+    {
+      "name": "brand 4",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/4.jpg"
+    },
+    {
+      "name": "brand 5",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/5.jpg"
+    },
+    {
+      "name": "brand 6",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/6.jpg"
+    },
+    {
+      "name": "brand 7",
+      "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/7.jpg"
+    }
+  ],
+
+  "categories": [
+    {
+      "name": "Shop",
+      "value": "shop",
+      "items": [
         {
-            "name": "Shop",
-            "value": "shop",
-            "items": [
-                {
-                    "name": "Autoparts",
-                    "value": "autoparts",
-                    "items": [
-                        {
-                            "name": "Engine Parts",
-                            "value": "engine-parts"
-                        },
-                        {
-                            "name": "Exhaust Parts",
-                            "value": "exhaust-parts"
-                        },
-                        {
-                            "name": "Brake Parts",
-                            "value": "brake-parts"
-                        },
-                        {
-                            "name": "Body Parts",
-                            "value": "body-parts"
-                        }
-                    ]
-                },
-                {
-                    "name": "Fashion",
-                    "value": "fashion",
-                    "items": [
-                        {
-                            "name": "Men",
-                            "value": "men"
-                        },
-                        {
-                            "name": "Women",
-                            "value": "women"
-                        },
-                        {
-                            "name": "Kids",
-                            "value": "kids"
-                        },
-                        {
-                            "name": "Accessories",
-                            "value": "accessories"
-                        }
-                    ]
-                },
-                {
-                    "name": "Furniture",
-                    "value": "furniture",
-                    "items": [
-                        {
-                            "name": "Living Room",
-                            "value": "living-room"
-                        },
-                        {
-                            "name": "Kitchen",
-                            "value": "kitchen"
-                        },
-                        {
-                            "name": "Office",
-                            "value": "office"
-                        },
-                        {
-                            "name": "Home Decor",
-                            "value": "home-decor"
-                        }
-                    ]
-                },
-                {
-                    "name": "Jewellery",
-                    "value": "Jewellery",
-                    "items": [
-                        {
-                            "name": "Rings",
-                            "value": "rings"
-                        },
-                        {
-                            "name": "Bracelets",
-                            "value": "bracelets"
-                        },
-                        {
-                            "name": "Necklaces",
-                            "value": "necklaces"
-                        },
-                        {
-                            "name": "Wedding Bands",
-                            "value": "wedding-bands"
-                        }
-                    ]
-                }
-            ]
+          "name": "Autoparts",
+          "value": "autoparts",
+          "items": [
+            {
+              "name": "Engine Parts",
+              "value": "engine-parts"
+            },
+            {
+              "name": "Exhaust Parts",
+              "value": "exhaust-parts"
+            },
+            {
+              "name": "Brake Parts",
+              "value": "brake-parts"
+            },
+            {
+              "name": "Body Parts",
+              "value": "body-parts"
+            }
+          ]
         },
-    
         {
-            "name": "Electronics",
-            "value": "electronics",
-            "items": [
-                {
-                    "name": "Mobiles",
-                    "value": "mobiles",
-                    "items": [
-                        {
-                            "name": "Apple",
-                            "value": "apple"
-                        },
-                        {
-                            "name": "BlackBerry",
-                            "value": "blackberry"
-                        },
-                        {
-                            "name": "OnePlus",
-                            "value": "oneplus"
-                        },
-                        {
-                            "name": "Sonny",
-                            "value": "sonny"
-                        }
-                    ]
-                },
-    
-                {
-                    "name": "Cameras",
-                    "value": "cameras",
-                    "items": [
-                        {
-                            "name": "DSLR",
-                            "value": "dslr"
-                        },
-                        {
-                            "name": "Lences",
-                            "value": "lences"
-                        },
-                        {
-                            "name": "Tripods",
-                            "value": "tripods"
-                        },
-                        {
-                            "name": "Batteries",
-                            "value": "batteries"
-                        }
-                    ]
-                }
-            ]
+          "name": "Fashion",
+          "value": "fashion",
+          "items": [
+            {
+              "name": "Men",
+              "value": "men"
+            },
+            {
+              "name": "Women",
+              "value": "women"
+            },
+            {
+              "name": "Kids",
+              "value": "kids"
+            },
+            {
+              "name": "Accessories",
+              "value": "accessories"
+            }
+          ]
         },
-    
         {
-            "name": "Sport & Books",
-            "value": "sport-and-books",
-            "items": [
-                {
-                    "name": "Sports",
-                    "value": "sports",
-                    "items": [
-                        {
-                            "name": "Football",
-                            "value": "football"
-                        },
-                        {
-                            "name": "Vollyball",
-                            "value": "vollyball"
-                        },
-                        {
-                            "name": "Cricket",
-                            "value": "cricket"
-                        }
-                    ]
-                },
-    
-                {
-                    "name": "Books",
-                    "value": "books",
-                    "items": [
-                        {
-                            "name": "Literature",
-                            "value": "literature"
-                        },
-                        {
-                            "name": "Philosophy",
-                            "value": "philosophy"
-                        },
-                        {
-                            "name": "Academics",
-                            "value": "academics"
-                        }
-                    ]
-                }
-            ]
+          "name": "Furniture",
+          "value": "furniture",
+          "items": [
+            {
+              "name": "Living Room",
+              "value": "living-room"
+            },
+            {
+              "name": "Kitchen",
+              "value": "kitchen"
+            },
+            {
+              "name": "Office",
+              "value": "office"
+            },
+            {
+              "name": "Home Decor",
+              "value": "home-decor"
+            }
+          ]
         },
-    
         {
-            "name": "Sale",
-            "value": "sale",
-            "items": []
+          "name": "Jewellery",
+          "value": "Jewellery",
+          "items": [
+            {
+              "name": "Rings",
+              "value": "rings"
+            },
+            {
+              "name": "Bracelets",
+              "value": "bracelets"
+            },
+            {
+              "name": "Necklaces",
+              "value": "necklaces"
+            },
+            {
+              "name": "Wedding Bands",
+              "value": "wedding-bands"
+            }
+          ]
         }
-    ]
+      ]
+    },
+
+    {
+      "name": "Electronics",
+      "value": "electronics",
+      "items": [
+        {
+          "name": "Mobiles",
+          "value": "mobiles",
+          "items": [
+            {
+              "name": "Apple",
+              "value": "apple"
+            },
+            {
+              "name": "BlackBerry",
+              "value": "blackberry"
+            },
+            {
+              "name": "OnePlus",
+              "value": "oneplus"
+            },
+            {
+              "name": "Sonny",
+              "value": "sonny"
+            }
+          ]
+        },
+
+        {
+          "name": "Cameras",
+          "value": "cameras",
+          "items": [
+            {
+              "name": "DSLR",
+              "value": "dslr"
+            },
+            {
+              "name": "Lences",
+              "value": "lences"
+            },
+            {
+              "name": "Tripods",
+              "value": "tripods"
+            },
+            {
+              "name": "Batteries",
+              "value": "batteries"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Sport & Books",
+      "value": "sport-and-books",
+      "items": [
+        {
+          "name": "Sports",
+          "value": "sports",
+          "items": [
+            {
+              "name": "Football",
+              "value": "football"
+            },
+            {
+              "name": "Vollyball",
+              "value": "vollyball"
+            },
+            {
+              "name": "Cricket",
+              "value": "cricket"
+            }
+          ]
+        },
+
+        {
+          "name": "Books",
+          "value": "books",
+          "items": [
+            {
+              "name": "Literature",
+              "value": "literature"
+            },
+            {
+              "name": "Philosophy",
+              "value": "philosophy"
+            },
+            {
+              "name": "Academics",
+              "value": "academics"
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "name": "Sale",
+      "value": "sale",
+      "items": []
+    }
+  ],
+
+  "chart": []
 }

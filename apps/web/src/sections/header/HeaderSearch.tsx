@@ -55,14 +55,16 @@ export const HeaderSearch = async () => {
                         </IconButton>
                     </div>
 
-                    <Badge badgeContent={"0"} color="error">
-                        <LocalMallOutlinedIcon sx={{ cursor: 'pointer', color: '#666' }} />
-                    </Badge>
+                    <Link href="/chart" className='mr-4'>
+                        <Badge badgeContent={"0"} color="error">
+                            <LocalMallOutlinedIcon sx={{ cursor: 'pointer', color: '#666' }} />
+                        </Badge>
+                    </Link>
                 </div>
             </div>
 
-            <div className='bg-[#f1f1f1] p-2'>
-                <div className='border-4 pr-1 flex sm:hidden bg-[#fff]'>
+            <div className='bg-[#f1f1f1] p-2 sm:hidden '>
+                <div className='border-4 pr-1 flex bg-[#fff]'>
                     <input
                         className='bg-white  p-3 text-[14px] outline-none flex-1'
                         placeholder='Search our catlog'

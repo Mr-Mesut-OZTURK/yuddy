@@ -22,9 +22,7 @@ interface IMobileFooterItem {
 export const MobileFooterItem = ({ item }: IMobileFooterItem) => {
 
     return (
-        <Accordion
-            className='bg-black text-white shadow-none '
-        >
+        <Accordion className='bg-black text-white shadow-none ' >
             <AccordionSummary
                 sx={{
                     minHeight: '0px!important',
