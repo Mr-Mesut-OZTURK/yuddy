@@ -12,12 +12,32 @@ import WarningAmberRoundedIcon from '@mui/icons-material/WarningAmberRounded';
 
 import { MainButton } from '../buttons'
 import { ProductDetailCarousel } from '@/sections'
+import { useRouter } from 'next/navigation';
 
 interface IComponentProps {
-    className?: string
+    className?: string;
+    isDelete?: boolean;
+    item?: any;
 }
 
-export const MainProductCard = ({ className }: IComponentProps) => {
+const addToChart = async (isDelete: boolean, id: any) => {
+    // console.log({ id });
+    const response = await fetch("http://localhost:3005/chart" + (id ? "/" + id : ""), {
+        method: isDelete ? "DELETE" : "POST",
+        body: JSON.stringify({
+            itemId: "1234",
+            quantity: 0,
+        })
+    })
+
+
+    console.log({ response });
+}
+
+
+export const MainProductCard = ({ className, isDelete, item }: IComponentProps) => {
+
+    const router = useRouter()
 
     const [detailDialog, setDetailDialog] = useState(false)
     const [chartDialog, setChartDialog] = useState(false)
@@ -84,9 +104,19 @@ export const MainProductCard = ({ className }: IComponentProps) => {
                         borderRadius: 0,
                         backgroundColor: '#000',
                     }}
-                    onClick={() => setChartDialog(true)}
+                    onClick={async () => {
+                        const res = await addToChart(isDelete ?? false, item?.id)
+                        console.log({ res });
+                        if (isDelete) {
+                            router.refresh()
+                        }
+                        else {
+                            router.refresh()
+                            setChartDialog(true)
+                        }
+                    }}
                 >
-                    ADD TO CART
+                    {isDelete ? "DELETE" : "ADD TO CART"}
                 </YButton>
 
             </div>

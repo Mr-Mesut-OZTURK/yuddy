@@ -15,7 +15,6 @@
       "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/modules/ps_imageslider/images/4d4d5897cf3d07949875e686ef53f604262c00c5_Slider-2.jpg"
     }
   ],
-
   "homeOffersArray": [
     {
       "title": "New Arrivals",
@@ -28,7 +27,6 @@
       "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/offer-img-2.jpg"
     }
   ],
-
   "homeCommentsArray": [
     {
       "name": "Alex Carter",
@@ -49,38 +47,43 @@
       "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/cms/testimonial-img-3.jpg"
     }
   ],
-
   "brands": [
     {
-      "name": "brand 1",
+      "name": "Brand 1",
+      "value": "brand 1",
       "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/1.jpg"
     },
     {
-      "name": "brand 2",
+      "name": "Brand 2",
+      "value": "brand 2",
       "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/2.jpg"
     },
     {
-      "name": "brand 3",
+      "name": "Brand 3",
+      "value": "brand 3",
       "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/3.jpg"
     },
     {
-      "name": "brand 4",
+      "name": "Brand 4",
+      "value": "brand 4",
       "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/4.jpg"
     },
     {
-      "name": "brand 5",
+      "name": "Brand 5",
+      "value": "brand 5",
       "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/5.jpg"
     },
     {
-      "name": "brand 6",
+      "name": "Brand 6",
+      "value": "brand 6",
       "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/6.jpg"
     },
     {
-      "name": "brand 7",
+      "name": "Brand 7",
+      "value": "brand 7",
       "imgUrl": "https://demo4techies.com/prestashop/shopkart-lite/img/m/7.jpg"
     }
   ],
-
   "categories": [
     {
       "name": "Shop",
@@ -176,7 +179,6 @@
         }
       ]
     },
-
     {
       "name": "Electronics",
       "value": "electronics",
@@ -203,7 +205,6 @@
             }
           ]
         },
-
         {
           "name": "Cameras",
           "value": "cameras",
@@ -228,7 +229,6 @@
         }
       ]
     },
-
     {
       "name": "Sport & Books",
       "value": "sport-and-books",
@@ -251,7 +251,6 @@
             }
           ]
         },
-
         {
           "name": "Books",
           "value": "books",
@@ -272,13 +271,27 @@
         }
       ]
     },
-
     {
       "name": "Sale",
       "value": "sale",
       "items": []
+    },
+    {
+      "id": "70de",
+      "itemId": "234243252",
+      "quantity": 0
+    },
+    {
+      "id": "0b9f",
+      "itemId": "234243252",
+      "quantity": 0
     }
   ],
-
-  "chart": []
+  "chart": [
+    {
+      "id": "8098",
+      "itemId": "1234",
+      "quantity": 0
+    }
+  ]
 }

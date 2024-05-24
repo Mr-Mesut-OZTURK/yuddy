@@ -12,18 +12,21 @@ const getCategories = async () => {
 
     const res = await fetch("http://localhost:3005/categories", { cache: 'no-cache' })
     const categories = await res.json()
+
+    const chartRes = await fetch("http://localhost:3005/chart", { cache: 'no-cache', })
+    const chart = await chartRes.json()
     // console.log({ categories });
 
-    return { categories }
+    return { categories, chart }
 }
 
 export const HeaderSearch = async () => {
 
-    const { categories }: { categories: TCategories } = await getCategories()
+    const { categories, chart }: { categories: TCategories, chart: Array<any> } = await getCategories()
 
 
     return (
-        <div className='bg-white  text-black'>
+        <div className='container bg-white  text-black'>
             <div className='container flex items-center justify-between p-2'>
 
                 <div className='flex items-center'>
@@ -56,7 +59,7 @@ export const HeaderSearch = async () => {
                     </div>
 
                     <Link href="/chart" className='mr-4'>
-                        <Badge badgeContent={"0"} color="error">
+                        <Badge badgeContent={chart?.length ?? "0"} color="error">
                             <LocalMallOutlinedIcon sx={{ cursor: 'pointer', color: '#666' }} />
                         </Badge>
                     </Link>

@@ -7,6 +7,7 @@ import AddRounded from "@mui/icons-material/AddRounded"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { TCategories } from '@/ts';
+import { IBrandCarouselItem } from '@/sections';
 import { MainButton, MainProductCard, ProductsFilterAccordionItem, RangeSlider } from '@/components';
 
 
@@ -21,9 +22,11 @@ const sortList = [
 
 
 const getCategories = async () => {
-    const res = await fetch("http://localhost:3005/categories", { cache: 'no-cache' })
-    const categories = await res.json()
-    return { categories }
+    const categoriesRes = await fetch("http://localhost:3005/categories", { cache: 'no-cache' })
+    const brandsRes = await fetch("http://localhost:3005/brands", { cache: 'no-cache' })
+    const categories = await categoriesRes.json()
+    const brands = await brandsRes.json()
+    return { categories, brands }
 }
 
 const ProductsPage = async ({ params }: any) => {
@@ -38,7 +41,7 @@ const ProductsPage = async ({ params }: any) => {
     }
 
 
-    const { categories }: { categories: TCategories } = await getCategories()
+    const { categories, brands }: { categories: TCategories, brands: Array<IBrandCarouselItem> } = await getCategories()
 
     const filtersList = [
         {
@@ -60,37 +63,38 @@ const ProductsPage = async ({ params }: any) => {
         },
         {
             title: "Brand",
-            items: [
-                {
-                    name: "Brand1",
-                    value: "brand1"
-                },
-                {
-                    name: "Brand2",
-                    value: "brand2"
-                },
-                {
-                    name: "Brand3",
-                    value: "brand3"
-                },
-                {
-                    name: "Brand4",
-                    value: "brand4"
-                },
-                {
-                    name: "Brand5",
-                    value: "brand5"
-                },
-                {
-                    name: "Brand6",
-                    value: "brand6"
-                },
-                {
-                    name: "Brand7",
-                    value: "brand7"
-                },
+            items: brands
+            // [
+            //     {
+            //         name: "Brand1",
+            //         value: "brand1"
+            //     },
+            //     {
+            //         name: "Brand2",
+            //         value: "brand2"
+            //     },
+            //     {
+            //         name: "Brand3",
+            //         value: "brand3"
+            //     },
+            //     {
+            //         name: "Brand4",
+            //         value: "brand4"
+            //     },
+            //     {
+            //         name: "Brand5",
+            //         value: "brand5"
+            //     },
+            //     {
+            //         name: "Brand6",
+            //         value: "brand6"
+            //     },
+            //     {
+            //         name: "Brand7",
+            //         value: "brand7"
+            //     },
 
-            ]
+            // ]
         },
     ]
 

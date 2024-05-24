@@ -74,7 +74,7 @@ const ContactUsPage = () => {
                         <div className='col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 max-w-[400px]'>
                             <label className='flex items-center' htmlFor='file' >
                                 <div className='p-5 border bg-[#f1f1f1] flex-1' />
-                                <button className='bg-black text-white p-2 mr-3'>
+                                <button className='bg-black text-white p-2 mr-3 uppercase'>
                                     Chose File
                                 </button> optional
                                 <input type="file" placeholder='' className='hidden' id='file' />
@@ -95,8 +95,8 @@ const ContactUsPage = () => {
                         </div>
                         <div></div>
                         <div className='col-span-1 sm:col-span-2 md:col-span-3 lg:col-span-4 max-w-[400px] flex justify-end'>
-                            <button className='bg-black text-white p-2'>
-                                Sent
+                            <button className='bg-black text-white p-2 uppercase'>
+                                Send
                             </button>
                         </div>
                     </div>

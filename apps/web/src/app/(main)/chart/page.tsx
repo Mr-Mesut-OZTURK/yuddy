@@ -1,20 +1,44 @@
 import React from 'react'
-import { MainButton, PoliciesComponent } from '@/components'
+import { MainButton, MainProductCard, PoliciesComponent } from '@/components'
 
+const getCart = async () => {
+    const chartRes = await fetch("http://localhost:3005/chart", { cache: 'no-cache', })
+    const chart = await chartRes.json()
+    return { chart }
+}
 
-const ChartPage = () => {
+const ChartPage = async () => {
+
+    const { chart }: any = await getCart()
+    console.log({ chart });
 
     return (
         <div className='container py-10'>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10'>
                 <div className='col-span-1 md:col-span-2'>
-                    <div className='border'>
+                    <div className='border '>
                         <h4 className='p-4 border-b font-bold'>
                             SHOPPING CART
                         </h4>
-                        <p className='p-4'>
-                            There are no more items in your cart
-                        </p>
+                        {!chart.length ? (
+                            <p className='p-4'>
+                                There are no more items in your cart
+                            </p>
+                        ) : (
+                            <div className='grid grid-cols-2 md:grid-cols-3 gap-5 p-4'>
+                                {
+                                    chart?.map((item: any, index: any) => {
+
+                                        return (
+                                            <div key={index}>
+                                                <MainProductCard isDelete item={item} />
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        )
+                        }
                     </div>
                 </div>
 
